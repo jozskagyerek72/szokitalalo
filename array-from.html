@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            height: 100px;
+            width: 100px;
+            border: solid black 1px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="text" name="" id="nev" placeholder="írd be a neved" onkeyup="handleKeyUp(event)">
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+
+    <script>
+        let nev = "Geró"
+        console.log(nev[2]);
+        console.log(nev.split(""));
+
+        let arr = Array.from(nev)
+        console.log(arr);
+
+        arr = [] //lista kiuritese
+        arr.length = 0 // kiurites
+
+        let nr1 = 10;
+        let nr2 = 100;
+        /*
+         let temp = nr1
+         nr1 = nr2
+         nr2 = temp
+         console.log(nr1, nr2);
+         legyegyszerubb mod de primitiv*/
+
+        [nr1, nr2] = [nr2, nr1] //gyorsabb, nem kell temp valtozo
+        console.log(nr1, nr2);
+
+        function handleKeyUp(e) {
+            console.log(e.keyCode, e.target.value);
+
+        }
+        document.querySelectorAll(".box").forEach((item, index) => {
+            console.log(item, index);
+            item.textContent = index
+        })
+
+    </script>
+</body>
+
+</html>
